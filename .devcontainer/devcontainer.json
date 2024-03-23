@@ -1,0 +1,17 @@
+{
+    "name" : "JM-project",
+    "image": "maven:latest",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "/bin/bash"
+            },
+            "extensions": [
+                "vscjava.vscode-java-debug",
+                "ms-vscode-remote.remote-containers",
+                "vscjava.vscode-java-pack"
+            ]
+        }
+    },
+    "forwardPorts": [8080]
+}
