@@ -1,6 +1,9 @@
 {
     "name" : "JM-project",
     "image": "maven:latest",
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ],
     "customizations": {
         "vscode": {
             "settings": {
