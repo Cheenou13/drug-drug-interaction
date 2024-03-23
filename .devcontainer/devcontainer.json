@@ -4,7 +4,7 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "terminal.integrated.defaultProfile.linux": "/bin/bash"
+                "terminal.integrated.defaultProfile.linux": "bash"
             },
             "extensions": [
                 "vscjava.vscode-java-debug",
