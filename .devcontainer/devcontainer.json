@@ -1,6 +1,10 @@
 {
     "name" : "JM-project",
-    "image": "maven:latest",
+    "build": {
+        "context": ".",
+        "dockerfile": "Dockerfile"
+    },
+    // "image": "maven:latest",
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
     ],
@@ -12,7 +16,11 @@
             "extensions": [
                 "vscjava.vscode-java-debug",
                 "ms-vscode-remote.remote-containers",
-                "vscjava.vscode-java-pack"
+                "vscjava.vscode-java-pack",
+                "ms-azuretools.vscode-docker",
+                "niudai.remote-github",
+                "github.vscode-github-actions",
+                "vscode.git"
             ]
         }
     },
