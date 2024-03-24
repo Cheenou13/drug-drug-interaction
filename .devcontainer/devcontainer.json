@@ -1,10 +1,10 @@
 {
     "name" : "JM-project",
-    "build": {
-        "context": ".",
-        "dockerfile": "Dockerfile"
-    },
-    // "image": "maven:latest",
+    // "build": {
+    //     "context": ".",
+    //     "dockerfile": "Dockerfile"
+    // },
+    "image": "maven:latest",
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
     ],
