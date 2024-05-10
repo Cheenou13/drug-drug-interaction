@@ -8,7 +8,13 @@ public class ApiController {
 
     @GetMapping("/")
     public String greet() {
-        return "Hello from Backend Service";
+        // Call to create the database when the root URL is hit
+        try {
+            DatabaseManager.createTestDatabase();
+            return "Database created and Hello from Backend Service";
+        } catch (Exception e) {
+            return "Error creating database: " + e.getMessage();
+        }
     }
 
     // Add more endpoints as needed
