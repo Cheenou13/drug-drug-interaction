@@ -1,13 +1,8 @@
 {
-    "name" : "JM-project",
-    // "build": {
-    //     "context": ".",
-    //     "dockerfile": "Dockerfile"
-    // },
-    "image": "maven:latest",
-    "mounts": [
-        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
-    ],
+    "name": "Java-Maven-Node-project",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "customizations": {
         "vscode": {
             "settings": {
@@ -20,7 +15,10 @@
                 "ms-azuretools.vscode-docker",
                 "niudai.remote-github",
                 "github.vscode-github-actions",
-                "vscode.git"
+                "vscode.git",
+                "ms-vscode.vscode-typescript-next",
+                "vscode.npm-script",
+                "github.vscode-pull-request-github"
             ]
         }
     },

@@ -1,10 +1,13 @@
-# Use maven image with JDK included as the base image, based on Debian
-FROM maven:3.8.4-openjdk-17-slim
+# Use the official Maven image from the Docker Hub
+FROM maven:latest
 
-# Install Docker CLI
+# Install Node.js
 RUN apt-get update && \
-    apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release && \
-    curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && \
-    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null && \
-    apt-get update && \
-    apt-get install -y docker-ce-cli
+    apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
+    apt-get install -y nodejs
+
+# Verify installations
+RUN node --version
+RUN npm --version
+RUN mvn --version
