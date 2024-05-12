@@ -12,7 +12,12 @@ const RxForm = () => {
                             <span className="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1">
                                 <span className="selection">
                                     <span className="select2-selection select2-selection--multiple" role="combobox" aria-expanded="false" tabIndex='-1' style={{}}>
-                                        <ul className="select2-selection__rendered"></ul>
+                                        <ul className="select2-selection__rendered">
+                                            <li className="select2-search select2-search--inline">
+                                                <input className="select2-search__field" type="search" tabIndex='0' autoComplete="off" autoCorrect="off" autoCapitalize="none" 
+                                                        spellCheck="false" role="textbox" aria-autocomplete="list" placeholder="medication name" style={{width: '1100px'}}/>
+                                            </li>
+                                        </ul>
                                     </span>
                                 </span>
                             </span>
