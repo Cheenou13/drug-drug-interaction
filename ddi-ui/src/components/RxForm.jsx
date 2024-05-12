@@ -1,6 +1,6 @@
 
-const RxForm = () => {
 
+const RxForm = () => {
     return (
         <>
             <div className="form-row interax-form-row">
@@ -8,7 +8,15 @@ const RxForm = () => {
                     <input type="hidden" name="authenticity_token" value={"ddi-12345"} autoComplete="off" ></input>
                     <div className="drug-search-box">
                         <h6 className='interax-header'>Add drug to check for DDI</h6>
-                        <div className="drug-search"></div>
+                        <div className="drug-search">
+                            <span className="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1">
+                                <span className="selection">
+                                    <span className="select2-selection select2-selection--multiple" role="combobox" aria-expanded="false" tabIndex='-1' style={{}}>
+                                        <ul className="select2-selection__rendered"></ul>
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
                     </div>
                 </form>
             </div>

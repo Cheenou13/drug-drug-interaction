@@ -20,7 +20,12 @@
                 "vscode.npm-script",
                 "github.vscode-pull-request-github",
                 "csstools.postcss",
-                "bradlc.vscode-tailwindcss"
+                "bradlc.vscode-tailwindcss",
+                "ecmel.vscode-html-css",
+                "solnurkarim.html-to-css-autocompletion",
+                "Zignd.html-css-class-completion",
+                "dsznajder.es7-react-js-snippets",
+                "burkeholland.simple-react-snippets"
             ]
         }
     },
