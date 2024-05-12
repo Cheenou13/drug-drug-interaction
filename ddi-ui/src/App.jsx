@@ -3,6 +3,8 @@ import { useState } from 'react'
 // import viteLogo from '/vite.svg'
 import './components/Nav.jsx'
 import Nav from './components/Nav.jsx'
+import InteractionLabel from './components/DrugLabel.jsx'
+import RxForm from './components/RxForm.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +13,10 @@ function App() {
     <div className='content-container'>
       <Nav></Nav>
       <div className='form-content interax-form-content'>
-
+        <div className='form-container'>
+          <InteractionLabel></InteractionLabel>
+          <RxForm></RxForm>
+        </div>
       </div>
     </div>
   )

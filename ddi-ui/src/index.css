@@ -25,6 +25,7 @@ body {
 
 h1, .h1 {
   font-size: 2.5rem;
+  line-height: 1.2;
 }
 
 main {
@@ -61,4 +62,120 @@ main {
   background: #fff;
   padding: 1.5rem;
   margin: 0;
+}
+
+.form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+a {
+  color: #00b0f2;
+  text-decoration: none;
+  background-color: transparent;
+}
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: block;
+  padding: .5rem 1rem;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: 0;
+}
+
+.search-tabs {
+  margin-bottom: 1.25rem;
+  flex-wrap: nowrap;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #aab3c1;
+  background-color: inherit;
+}
+
+.search-tabs .nav-link.active {
+  color: #ff00b8;
+}
+
+.nav-tabs .nav-link.active {
+  font-weight: 700;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.search-tabs .nav-link {
+  text-align: center;
+}
+
+.nav-tabs .nav-link {
+  background-color: inherit !important;
+  border: none;
+  text-transform: uppercase;
+  transition: color .15s ease-in-out;
+  padding: .75rem 1rem;
+  position: relative;
+}
+
+.nav-tabs .nav-link {
+  margin-bottom: -1px;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+
+.nav-tabs .nav-link.active:before {
+  content: ''; 
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: calc(50% - 7px);
+  bottom: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #aab3c1;
+}
+
+.nav-tabs .nav-link.active:after {
+  content: ''; 
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: calc(50% - 7px);
+  bottom: -1.5px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #fff;
+}
+
+/* ***********************************************************Interax form row ***********************************************/
+.content-container .form-content.interax-form-content 
+.interax-form-row, .interaction-search-container .interax-form-row{
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.form-content .form-row {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 5px;
+  margin-left: 5px;
 }
