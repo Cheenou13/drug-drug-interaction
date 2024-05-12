@@ -179,3 +179,50 @@ ul {
   margin-right: 5px;
   margin-left: 5px;
 }
+
+form.name-search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  width: 50%;
+}
+
+input {
+  overflow: visible;
+
+}
+
+input, button, select, optgroup, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* ************* Search Box *************************** */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+h6, .h6 {
+  font-size: 1rem;
+}
+form.name-search-form 
+.drug-search-box {
+    background: #282c34;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+form.name-search-form .drug-search-box .interax-header{
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+}
