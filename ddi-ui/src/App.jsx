@@ -10,8 +10,9 @@ function App() {
   return (
     <div className='content-container'>
       <Nav></Nav>
-      <h1>Hello world React and vite</h1>
-      <p>Hello Chee 4x</p>
+      <div className='form-content interax-form-content'>
+
+      </div>
     </div>
   )
 }
