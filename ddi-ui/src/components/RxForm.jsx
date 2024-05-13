@@ -1,6 +1,7 @@
 
 import SearchDrugs from "./SearchDrugs";
 import SearchAction from "./SearchAction";
+import WarningTag from "./WaringTag";
 const RxForm = () => {
     return (
         <>
@@ -26,6 +27,7 @@ const RxForm = () => {
                     </div>
                     <SearchDrugs></SearchDrugs>
                     <SearchAction></SearchAction>
+                    <WarningTag></WarningTag>
                 </form>
             </div>
         </>

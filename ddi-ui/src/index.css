@@ -364,7 +364,7 @@ input, button, select, optgroup, textarea {
   border-radius: .75rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  font-weight: 700;
+  font-weight: 500;
   padding: .5rem 1rem;
   cursor: default;
 }
@@ -515,4 +515,136 @@ input, button, select, optgroup, textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+#disclaimer {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-top: 1.5rem;
+  font-size: .9rem;
+}
+
+.content-container .form-content.interax-form-content .warning {
+  color: #ea6771;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: .5rem;
+  padding: 1rem;
+  border: 2px solid #ea6771;
+  border-radius: 1rem;
+}
+
+.drug-icon {
+  display: inline-block;
+  line-height: 0;
+}
+
+.drug-icon svg {
+  background-color: transparent;
+  fill: currentColor;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+}
+
+.results .anchor {
+  position: absolute;
+  top: -64px;
+  left: 0;
+}
+
+.results {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.results h2 {
+  font-weight: 400;
+  margin-bottom: 1rem;
+  
+}
+
+h2 {
+  color: #00161e;
+  font-weight: lighter;
+  font-size: 1.7rem;
+  margin-top: 1.5rem;
+}
+
+.results .drug-interactions .interactions-box {
+  background: #f7f7f7;
+  border: 1px solid #cecece;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+}
+
+.results .drug-interactions .interactions-box .interactions-row:not(:last-child){
+  border-bottom: 1px solid #cecece;
+}
+
+.results .drug-interactions .interactions-row {
+  display: flex;
+  flex-direction: row;
+  margin: 0 3rem;
+}
+
+.results .drug-interactions .interactions-col.subject{
+  width: 25%;
+  justify-content: center;
+}
+
+.results .drug-interactions .interactions-col {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  position: relative;
+}
+
+.results .drug-interactions .interactions-col h5{
+  margin-bottom: 0;
+  text-align: center;
+}
+
+h5, .h5 {
+  font-size: 1.25rem;
+}
+
+.results .drug-interactions .interactions-col h5 a {
+  word-break: break-word;
+  color: #282c34;
+  font-weight: 600;
+}
+
+.results .drug-interactions .interactions-col.interacts {
+  width: 0%;
+  padding: 1rem 0;
+  justify-content: center;
+}
+
+.results .drug-interactions .interactions-col .icon-interacts {
+  position: absolute;
+  right: -12px;
+}
+
+.drug-icon-1 {
+  display: inline-block;
+  line-height: 0;
+}
+
+.severity-major svg {
+  stroke: #741d5c;
+}
+
+.drug-icon-1 svg {
+  background-color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
 }

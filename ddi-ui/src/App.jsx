@@ -5,6 +5,7 @@ import './components/Nav.jsx'
 import Nav from './components/Nav.jsx'
 import InteractionLabel from './components/DrugLabel.jsx'
 import RxForm from './components/RxForm.jsx'
+import DrugInteractions from './components/results/DrugInteractions.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,11 @@ function App() {
         <div className='form-container'>
           <InteractionLabel></InteractionLabel>
           <RxForm></RxForm>
+          <div className='results'>
+            <div className='anchor' id='results'></div>
+            <h2><strong>Interactions Found</strong></h2>
+            <DrugInteractions></DrugInteractions>
+          </div>
         </div>
       </div>
     </div>
