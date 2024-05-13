@@ -354,3 +354,52 @@ input, button, select, optgroup, textarea {
   font-size: inherit;
   line-height: inherit;
 }
+
+#drug-product-list .btn-label{
+  background-color: #f7f7f7;
+  color: #282c34;
+  border: solid 1px #cecece;
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+  border-radius: .75rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 700;
+  padding: .5rem 1rem;
+  cursor: default;
+}
+
+.btn:not(:disabled):not(.disabled), .page-header .actions a:not(:disabled):not(.disabled) {
+  cursor: default;
+}
+
+.btn, .page-header .actions a {
+  cursor: pointer;
+  transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, color .15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-container .form-content.interax-form-content .drugbank-icon.icon-minus, 
+.content-container .form-content.interax-form-content .drugbank-icon.icon-plus, 
+.interaction-search-container .drugbank-icon.icon-minus, 
+.interaction-search-container .drugbank-icon.icon-plus {
+  margin-left: .5em;
+  background: #ff00b8;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  line-height: 1.2;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.drugbank-icon.icon-circle {
+  border-radius: 50%;
+}
+
+.drugbank-icon {
+  display: inline-block;
+  line-height: 0;
+}

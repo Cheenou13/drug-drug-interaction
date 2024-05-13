@@ -1,5 +1,5 @@
 
-
+import SearchDrugs from "./SearchDrugs";
 const RxForm = () => {
     return (
         <>
@@ -23,6 +23,7 @@ const RxForm = () => {
                             </span>
                         </div>
                     </div>
+                    <SearchDrugs></SearchDrugs>
                 </form>
             </div>
         </>
