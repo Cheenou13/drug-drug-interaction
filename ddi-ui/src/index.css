@@ -403,3 +403,116 @@ input, button, select, optgroup, textarea {
   display: inline-block;
   line-height: 0;
 }
+
+form.name-search-form .search-actions {
+  margin-top: 1rem;
+}
+
+.search-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: -.5rem;
+}
+
+form.name-search-form .search-actions button[type=submit]{
+  max-width: 450px;
+  min-width: 50%;
+  flex: 1 1 auto;
+}
+
+.btn-1:not(:disabled):not(.disabled), .page-header .actions a:not(:disabled):not(.disabled){
+  cursor: pointer;
+}
+
+.search-actions button[type=submit], .search-actions input[type=submit] {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+  cursor: pointer;
+}
+
+.search-actions button, .search-actions a, .search-actions input {
+  margin-bottom: .5rem;
+}
+
+.btn-pink-filled-1 {
+  color: #fff;
+  background-color: #ff00b8;
+  border-color: #ff00b8;
+  border-radius: 999px;
+}
+
+button, [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, input {
+  overflow: visible;
+}
+
+input, button, select, optgroup, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.btn-1, .page-header .actions a{
+  /* display: inline-block; */
+  /* font-weight: 400; */
+  color: #fff;
+  /* text-align: center; */
+  /* vertical-align: middle; */
+  /* -webkit-user-select: none; */
+  /* -moz-user-select: none; */
+  /* -ms-user-select: none; */
+  /* user-select: none; */
+  /* background-color: transparent; */
+  /* border: 1px solid transparent; */
+  padding: .375rem .75rem;
+  /* font-size: 1rem; */
+  /* line-height: 1.5; */
+  /* border-radius: .25rem; */
+  /* transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out; */
+}
+
+.btn-2:not(:disabled):not(.disabled), .page-header .actions a:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.search-actions .btn-sm {
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: .25rem 1rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.search-actions a {
+  margin-bottom: .5rem;
+}
+
+.btn-blue {
+  color: #00b0f2;
+  border: 1px solid #00b0f2;
+  border-color: #00b0f2;
+  border-radius: 999px;
+}
+
+.btn-2, .actions a {
+  cursor: pointer;
+  transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, color .15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
