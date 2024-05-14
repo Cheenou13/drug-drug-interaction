@@ -21,6 +21,7 @@ function App() {
             <div className='anchor' id='results'></div>
             <h2><strong>Interactions Found</strong></h2>
             <DrugInteractions></DrugInteractions>
+            <DrugInteractions></DrugInteractions>
           </div>
         </div>
       </div>
