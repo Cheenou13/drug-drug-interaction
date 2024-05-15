@@ -20,6 +20,8 @@ target/
 *.ipr
 
 ### NetBeans ###
+indexDir/*
+DDI-cache/*
 /nbproject/private/
 /nbbuild/
 /dist/
