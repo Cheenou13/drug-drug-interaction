@@ -7,16 +7,23 @@ import React, { useState } from 'react';
 const RxForm = () => {
 
     const [inputValue, setInputValue] = useState('');
-
+    const [submittedValues, setSubmittedValues] = useState([]);
+  
     const handleInputChange = (e) => {
-        setInputValue(e.target.value);
+      setInputValue(e.target.value);
     };
-    
+  
     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Form submitted with value:", inputValue);
-        setInputValue(''); // Clear the input        
-    }
+      e.preventDefault();
+      if (inputValue.trim() !== '' && submittedValues.length < 5) {
+        setSubmittedValues([...submittedValues, inputValue]);
+        setInputValue(''); // Clear the input
+      }
+    };
+  
+    const removeValue = (val) => {
+      setSubmittedValues(submittedValues.filter((item) => item !== val));
+    };
     return (
         <>
             <div className="form-row interax-form-row">
@@ -50,8 +57,8 @@ const RxForm = () => {
                             </span>
                         </div>
                     </div>
-                    <SearchDrugs></SearchDrugs>
-                    <SearchAction></SearchAction>
+                    <SearchDrugs inputValue={submittedValues} removeValue={removeValue}></SearchDrugs>
+                    <SearchAction inputValue={submittedValues}></SearchAction>
                     <WarningTag></WarningTag>
                 </form>
             </div>
