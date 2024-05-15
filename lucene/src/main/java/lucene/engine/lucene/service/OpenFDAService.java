@@ -12,6 +12,7 @@ public class OpenFDAService {
 
     public String getDrugInteractions(String drug1, String drug2) throws IOException {
         String url = OPEN_FDA_URL.replace("[DRUG1]", drug1).replace("[DRUG2]", drug2);
+        System.out.println("OPENFDA URL: "+url);
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
         return response.getBody();

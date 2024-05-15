@@ -30,11 +30,27 @@ public class OpenFDAResponse {
         JsonNode rootNode = objectMapper.readTree(json);
         OpenFDAResponse response = new OpenFDAResponse();
 
-        JsonNode interactionsNode = rootNode.path("drug_interactions");
-        JsonNode reactionsNode = rootNode.path("adverse_reactions");
+        JsonNode resultsNode = rootNode.path("results");
+        if (resultsNode.isArray() && resultsNode.size() > 0) {
+            JsonNode firstResult = resultsNode.get(0);
+            JsonNode interactionsNode = firstResult.path("drug_interactions");
+            JsonNode reactionsNode = firstResult.path("adverse_reactions");
 
-        response.setDrugInteractions(interactionsNode.asText(""));
-        response.setAdverseReactions(reactionsNode.asText(""));
+            if (interactionsNode.isArray() && interactionsNode.size() > 0) {
+                response.setDrugInteractions(interactionsNode.toString());
+            } else {
+                response.setDrugInteractions("");
+            }
+
+            if (reactionsNode.isArray() && reactionsNode.size() > 0) {
+                response.setAdverseReactions(reactionsNode.toString());
+            } else {
+                response.setAdverseReactions("");
+            }
+        } else {
+            response.setDrugInteractions("");
+            response.setAdverseReactions("");
+        }
 
         return response;
     }
