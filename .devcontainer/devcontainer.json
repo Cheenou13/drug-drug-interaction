@@ -30,5 +30,8 @@
             ]
         }
     },
-    "forwardPorts": [5173]
+    "forwardPorts": [5173],
+    "remoteEnv": {
+        "OPENAI_API_KEY": "${localEnv:OPENAI_API_KEY}"
+    }
 }

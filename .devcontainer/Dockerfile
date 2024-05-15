@@ -11,3 +11,5 @@ RUN apt-get update && \
 RUN node --version
 RUN npm --version
 RUN mvn --version
+
+
