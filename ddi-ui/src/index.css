@@ -690,6 +690,10 @@ h5, .h5 {
 
 .results .drug-interactions .interactions-col.description {
   width: 30%;
+  max-width: 300px; /* Adjust the width as needed */
+  max-height: 150px; /* Adjust the height as needed */
+
+
 }
 
 .results .drug-interactions .interactions-col p {
@@ -699,8 +703,6 @@ h5, .h5 {
   -webkit-box-orient: vertical; /* Set the box orientation to vertical */
   -webkit-line-clamp: 3; /* Number of lines to show before truncating */
   overflow: hidden; /* Hide overflow content */
-  text-overflow: ellipsis; /* Add ellipses to overflow text */
-  line-clamp: 3; /* Number of lines to show before truncating (standard property) */
   white-space: normal; /* Allow wrapping within the element */
 }
 

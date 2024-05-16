@@ -4,7 +4,7 @@ import SearchAction from "./SearchAction.jsx";
 import WarningTag from "./WaringTag.jsx";
 import React, { useState } from 'react';
 
-const RxForm = ({ inputValue, submittedValues, handleInputChange, handleSubmit, removeValue, setTempResponse }) => {
+const RxForm = ({ inputValue, submittedValues, handleInputChange, handleSubmit, removeValue, setTempResponse, setSubmittedValues }) => {
 
     return (
         <>
@@ -40,7 +40,7 @@ const RxForm = ({ inputValue, submittedValues, handleInputChange, handleSubmit, 
                         </div>
                     </div>
                     <SearchDrugs inputValue={submittedValues} removeValue={removeValue}></SearchDrugs>
-                    <SearchAction inputValue={submittedValues} setTempResponse={setTempResponse}></SearchAction>
+                    <SearchAction inputValue={submittedValues} setTempResponse={setTempResponse}  setSubmittedValues={setSubmittedValues}></SearchAction>
                     <WarningTag></WarningTag>
                 </form>
             </div>

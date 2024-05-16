@@ -37,7 +37,8 @@ function App() {
             handleInputChange={handleInputChange}
             handleSubmit={handleSubmit}
             removeValue={removeValue}
-            setTempResponse={setTempResponse}            
+            setTempResponse={setTempResponse}  
+            setSubmittedValues={setSubmittedValues}          
           ></RxForm>
           <div className='results'>
             <div className='anchor' id='results'></div>

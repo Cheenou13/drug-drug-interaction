@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-const SearchAction = ({inputValue, setTempResponse }) => {
+const SearchAction = ({inputValue, setTempResponse , setSubmittedValues }) => {
 
     let _url = ""
     const handleClick = async () => {
@@ -23,6 +23,11 @@ const SearchAction = ({inputValue, setTempResponse }) => {
         console.log("Resource from the drugs is being saved: ". tempResponses);
         console.log("button is clicked. ", inputValue);
     };
+
+    const handleClear = (e) => {
+        //clearing prompt drugs
+        setSubmittedValues([])
+    }
     return (
         <>
             <div className="search-actions">
@@ -31,7 +36,7 @@ const SearchAction = ({inputValue, setTempResponse }) => {
                         onClick={handleClick}
                         >Check Interactions</button>
                 <div className="right-buttons">
-                    <a className="search-clear btn-2 btn-blue btn-sm ml-2 mb-2 transition duration-150 ease-in-out shadow hover:shadow-lg hover:bg-[#00b0f2] hover:text-[#fff]" href="#">Clear</a>
+                    <a className="search-clear btn-2 btn-blue btn-sm ml-2 mb-2 transition duration-150 ease-in-out shadow hover:shadow-lg hover:bg-[#00b0f2] hover:text-[#fff]" onClick={handleClear}>Clear</a>
                 </div>
             </div>
 
