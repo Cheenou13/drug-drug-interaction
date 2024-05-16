@@ -4,26 +4,8 @@ import SearchAction from "./SearchAction.jsx";
 import WarningTag from "./WaringTag.jsx";
 import React, { useState } from 'react';
 
-const RxForm = () => {
+const RxForm = ({ inputValue, submittedValues, handleInputChange, handleSubmit, removeValue, setTempResponse }) => {
 
-    const [inputValue, setInputValue] = useState('');
-    const [submittedValues, setSubmittedValues] = useState([]);
-  
-    const handleInputChange = (e) => {
-      setInputValue(e.target.value);
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      if (inputValue.trim() !== '' && submittedValues.length < 5) {
-        setSubmittedValues([...submittedValues, inputValue]);
-        setInputValue(''); // Clear the input
-      }
-    };
-  
-    const removeValue = (val) => {
-      setSubmittedValues(submittedValues.filter((item) => item !== val));
-    };
     return (
         <>
             <div className="form-row interax-form-row">
@@ -58,7 +40,7 @@ const RxForm = () => {
                         </div>
                     </div>
                     <SearchDrugs inputValue={submittedValues} removeValue={removeValue}></SearchDrugs>
-                    <SearchAction inputValue={submittedValues}></SearchAction>
+                    <SearchAction inputValue={submittedValues} setTempResponse={setTempResponse}></SearchAction>
                     <WarningTag></WarningTag>
                 </form>
             </div>

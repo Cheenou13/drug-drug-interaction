@@ -690,11 +690,26 @@ h5, .h5 {
 
 .results .drug-interactions .interactions-col.description {
   width: 30%;
+  max-width: 300px; /* adjust the width as needed */
+  max-height: 150px; /* adjust the height as needed */
+  overflow: hidden; /* hides overflow content */
+  display: -webkit-box; /* ensures compatibility with webkit browsers */
+  -webkit-box-orient: vertical; /* sets the box orientation to vertical */
+  -webkit-line-clamp: 3; /* number of lines to show before truncating */
+  text-overflow: ellipsis; /* adds ellipses to overflow text */
+  box-sizing: border-box;
 }
 
 .results .drug-interactions .interactions-col p {
   color: #282c34;
   margin-bottom: 0;
+  display: -webkit-box; /* Ensure compatibility with webkit browsers */
+  -webkit-box-orient: vertical; /* Set the box orientation to vertical */
+  -webkit-line-clamp: 3; /* Number of lines to show before truncating */
+  overflow: hidden; /* Hide overflow content */
+  text-overflow: ellipsis; /* Add ellipses to overflow text */
+  line-clamp: 3; /* Number of lines to show before truncating (standard property) */
+  white-space: normal; /* Allow wrapping within the element */
 }
 
 p {
@@ -723,4 +738,5 @@ p {
   flex-direction: column;
   align-items: stretch;
 }
+
 

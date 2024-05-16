@@ -1,7 +1,6 @@
 import React, {useState} from "react";
-const SearchAction = ({inputValue}) => {
+const SearchAction = ({inputValue, setTempResponse }) => {
 
-    const [responses, setResponses] = useState([]);
     let _url = ""
     const handleClick = async () => {
         let tempResponses = [];
@@ -20,9 +19,10 @@ const SearchAction = ({inputValue}) => {
                 }
             }
         }
-
-        console.log("button is clicked. ", inputValue)
-    }
+        setTempResponse(tempResponses);
+        console.log("Resource from the drugs is being saved: ". tempResponses);
+        console.log("button is clicked. ", inputValue);
+    };
     return (
         <>
             <div className="search-actions">
