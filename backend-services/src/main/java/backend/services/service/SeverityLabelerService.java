@@ -5,7 +5,6 @@ import opennlp.tools.tokenize.Tokenizer;
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -89,8 +88,11 @@ public class SeverityLabelerService {
 
     public String labelParagraph(String paragraph) {
         try {
-            // Load the OpenNLP tokenizer model
-            InputStream modelIn = new FileInputStream("en-token.bin");
+            // Load the OpenNLP tokenizer model from resources
+            InputStream modelIn = getClass().getResourceAsStream("/en-token.bin");
+            if (modelIn == null) {
+                throw new IllegalArgumentException("Token model file not found!");
+            }
             TokenizerModel model = new TokenizerModel(modelIn);
             Tokenizer tokenizer = new TokenizerME(model);
 
@@ -131,19 +133,17 @@ public class SeverityLabelerService {
         int moderateCount = severityCounts.get("Moderate");
         int minorCount = severityCounts.get("Minor");
 
-        // if there is reaction, then the severity is none
-        if (majorCount == moderateCount && majorCount == minorCount)
-            if (majorCount == 0) return "None";
+        if (majorCount == 0 && moderateCount == 0 && minorCount == 0) {
+            return "None";
+        }
 
-        if (majorCount >= moderateCount){
+        if (majorCount >= moderateCount) {
             if (moderateCount >= minorCount) return "Major";
             if (moderateCount < minorCount && majorCount < minorCount) return "Minor";
-        }
-        else if (majorCount < moderateCount) {
+        } else if (majorCount < moderateCount) {
             if (majorCount >= minorCount) return "Moderate";
             if (majorCount < minorCount && moderateCount < minorCount) return "Minor";
-        }
-        else {
+        } else {
             if (moderateCount >= minorCount) return "Moderate";
         }
         return "Minor";

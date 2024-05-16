@@ -41,22 +41,8 @@ public class OpenAIService {
     }
 
     public String determineSeverity(String interactionSummary) {
-        ChatMessage systemMessage = new ChatMessage("system", "You are an expert in drug interactions.");
-        ChatMessage userMessage = new ChatMessage("user", "Determine the severity of the following drug interaction summary: " + interactionSummary + " Severity can be major, moderate, minor, or none.");
-        
-        ChatCompletionRequest request = ChatCompletionRequest.builder()
-                .model(model)
-                .messages(Arrays.asList(systemMessage, userMessage))
-                .maxTokens(20)
-                .build();
-        
-        List<ChatCompletionChoice> choices = openAiService.createChatCompletion(request).getChoices();
-        String severityLevel = choices.get(0).getMessage().getContent().trim().toLowerCase();
-        
-        if (severityLevel.contains("major")) return "major";
-        if (severityLevel.contains("moderate")) return "moderate";
-        if (severityLevel.contains("minor")) return "minor";
-        return "none";
+        SeverityLabelerService labeler = new SeverityLabelerService();
+        return labeler.labelParagraph(interactionSummary);
     }
 
     public void saveInteraction(String drugA, String drugB, boolean isDdi, String severity, String interactionDescription) throws IOException {
@@ -94,3 +80,21 @@ public class OpenAIService {
         fos.close();
     }
 }
+
+
+        // ChatMessage systemMessage = new ChatMessage("system", "You are an expert in drug interactions.");
+        // ChatMessage userMessage = new ChatMessage("user", "Determine the severity of the following drug interaction summary: " + interactionSummary + " Severity can be major, moderate, minor, or none.");
+        
+        // ChatCompletionRequest request = ChatCompletionRequest.builder()
+        //         .model(model)
+        //         .messages(Arrays.asList(systemMessage, userMessage))
+        //         .maxTokens(20)
+        //         .build();
+        
+        // List<ChatCompletionChoice> choices = openAiService.createChatCompletion(request).getChoices();
+        // String severityLevel = choices.get(0).getMessage().getContent().trim().toLowerCase();
+        
+        // if (severityLevel.contains("major")) return "major";
+        // if (severityLevel.contains("moderate")) return "moderate";
+        // if (severityLevel.contains("minor")) return "minor";
+        // return "none";
