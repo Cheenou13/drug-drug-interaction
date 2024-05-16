@@ -131,14 +131,21 @@ public class SeverityLabelerService {
         int moderateCount = severityCounts.get("Moderate");
         int minorCount = severityCounts.get("Minor");
 
-        if (majorCount > 0) {
-            return "Major";
-        } else if (moderateCount > 0) {
-            return "Moderate";
-        } else if (minorCount > 0) {
-            return "Minor";
-        } else {
-            return "None";
+        // if there is reaction, then the severity is none
+        if (majorCount == moderateCount && majorCount == minorCount)
+            if (majorCount == 0) return "None";
+
+        if (majorCount >= moderateCount){
+            if (moderateCount >= minorCount) return "Major";
+            if (moderateCount < minorCount && majorCount < minorCount) return "Minor";
         }
+        else if (majorCount < moderateCount) {
+            if (majorCount >= minorCount) return "Moderate";
+            if (majorCount < minorCount && moderateCount < minorCount) return "Minor";
+        }
+        else {
+            if (moderateCount >= minorCount) return "Moderate";
+        }
+        return "Minor";
     }
 }
