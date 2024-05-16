@@ -9,9 +9,9 @@
                 "terminal.integrated.defaultProfile.linux": "bash"
             },
             "extensions": [
+                "vscjava.vscode-java-pack",
                 "vscjava.vscode-java-debug",
                 "ms-vscode-remote.remote-containers",
-                "vscjava.vscode-java-pack",
                 "ms-azuretools.vscode-docker",
                 "niudai.remote-github",
                 "github.vscode-github-actions",
