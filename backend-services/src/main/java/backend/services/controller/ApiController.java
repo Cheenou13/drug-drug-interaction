@@ -1,10 +1,10 @@
 
-package lucene.engine.lucene.controller;
+package backend.services.controller;
 
-import lucene.engine.lucene.service.LuceneService;
-import lucene.engine.lucene.service.OpenFDAService;
-import lucene.engine.lucene.service.OpenAIService;
-import lucene.engine.lucene.service.OpenFDAResponse;
+import backend.services.service.LuceneService;
+import backend.services.service.OpenFDAService;
+import backend.services.service.OpenAIService;
+import backend.services.service.OpenFDAResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

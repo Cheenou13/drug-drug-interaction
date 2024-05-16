@@ -1,4 +1,4 @@
-package lucene.engine.lucene.service;
+package backend.services.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package lucene.engine.lucene.service;
+package backend.services.service;
 
 import com.theokanning.openai.service.OpenAiService;
 import com.theokanning.openai.completion.chat.ChatCompletionRequest;
