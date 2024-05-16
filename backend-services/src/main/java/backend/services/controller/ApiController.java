@@ -67,23 +67,26 @@ public class ApiController {
             if (!interactions.isEmpty()) {
                 if (interactions.contains(drugA) && interactions.contains(drugB)) {
                     hasDdi = true;
-                    interactionSummary = openAIService.summarizeInteractions(interactions);
+                    interactionSummary = " ";
+                    interactionSummary += interactions;
                     severity = openAIService.determineSeverity(interactionSummary);
+                    interactionSummary = openAIService.summarizeInteractions(interactions);
                 }
             }
 
             if (!adverseReactions.isEmpty()){
                 if ( adverseReactions.contains(drugA) && adverseReactions.contains(drugB)){
                     hasDdi = true;
+                    interactionSummary = "";
                     if (!interactionSummary.contains("No")){
-                        interactionSummary = "";
                         interactionSummary = interactions + " " +adverseReactions;
-                        interactionSummary = openAIService.summarizeInteractions(interactionSummary);
                         severity = openAIService.determineSeverity(interactionSummary);
+                        interactionSummary = openAIService.summarizeInteractions(interactionSummary);
                     }
                     else {
-                        interactionSummary = openAIService.summarizeInteractions(adverseReactions);
+                        interactionSummary = interactions + " " +adverseReactions;
                         severity = openAIService.determineSeverity(interactionSummary);
+                        interactionSummary = openAIService.summarizeInteractions(adverseReactions);
                     }
                 }
             }

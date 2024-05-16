@@ -40,6 +40,14 @@ public class SeverityLabelerService {
         MAJOR_KEYWORDS.add("severe hypotension");
         MAJOR_KEYWORDS.add("severe hypertension");
         MAJOR_KEYWORDS.add("severe liver injury");
+        MAJOR_KEYWORDS.add("internal");
+        MAJOR_KEYWORDS.add("bleeding");
+        MAJOR_KEYWORDS.add("organ");
+        MAJOR_KEYWORDS.add("serious");
+        MAJOR_KEYWORDS.add("heart");
+        MAJOR_KEYWORDS.add("renal");
+        MAJOR_KEYWORDS.add("kidney");
+        MAJOR_KEYWORDS.add("bleed");
 
         MODERATE_KEYWORDS.add("significant");
         MODERATE_KEYWORDS.add("requires medical attention");
