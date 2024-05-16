@@ -1,12 +1,22 @@
 import React, {useState} from "react";
-
 const SearchAction = ({inputValue}) => {
+
+    const [responses, setResponses] = useState([]);
     let _url = ""
-    const handleClick = () => {
+    const handleClick = async () => {
+        let tempResponses = [];
         for (let i = 0; i < inputValue.length; ++ i){
             for (let j = i+1; j < inputValue.length; ++ j){
                 _url =  `http://localhost:8080/api/drug-interactions?drugA=${inputValue[i]}&drugB=${inputValue[j]}`
                 console.log("endPoint Search: ", _url);
+
+                try {
+                    let response = await fetch(_url);
+                    let data = await response.json();
+                    tempResponses.push({ url: _url, data: data });
+                }catch (error) {
+                    console.error("Error fetching data: ", error);
+                }
             }
         }
 
