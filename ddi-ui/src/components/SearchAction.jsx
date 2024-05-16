@@ -14,6 +14,7 @@ const SearchAction = ({inputValue}) => {
                     let response = await fetch(_url);
                     let data = await response.json();
                     tempResponses.push({ url: _url, data: data });
+                    console.log("data: ", tempResponses);
                 }catch (error) {
                     console.error("Error fetching data: ", error);
                 }

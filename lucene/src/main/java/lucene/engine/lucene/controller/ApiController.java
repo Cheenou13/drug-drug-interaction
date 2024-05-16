@@ -7,6 +7,7 @@ import lucene.engine.lucene.service.OpenAIService;
 import lucene.engine.lucene.service.OpenFDAResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,7 +38,7 @@ public class ApiController {
             return ResponseEntity.status(500).body("Error creating database: " + e.getMessage());
         }
     }
-
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/api/drug-interactions")
     public ResponseEntity<Map<String, Object>> getDrugInteractions(@RequestParam String drugA, @RequestParam String drugB) {
         Map<String, Object> response = new HashMap<>();

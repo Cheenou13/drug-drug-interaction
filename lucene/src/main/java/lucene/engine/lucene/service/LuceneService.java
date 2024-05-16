@@ -119,24 +119,22 @@ public class LuceneService {
             return null; // File does not exist, no cache to check
         }
         
-        FileInputStream fis = new FileInputStream(file);
-        Workbook workbook = new XSSFWorkbook(fis);
-        Sheet sheet = workbook.getSheetAt(0);
-        Iterator<Row> rowIterator = sheet.iterator();
-
-        while (rowIterator.hasNext()) {
-            Row row = rowIterator.next();
-            if (row.getCell(0).getStringCellValue().equalsIgnoreCase(drugA) && row.getCell(1).getStringCellValue().equalsIgnoreCase(drugB)) {
-                String interactionDescription = row.getCell(4).getStringCellValue();
-                String severity = row.getCell(3).getStringCellValue();
-                workbook.close();
-                fis.close();
-                return new String[]{interactionDescription, severity};
+        try (FileInputStream fis = new FileInputStream(file); Workbook workbook = new XSSFWorkbook(fis)) {
+            Sheet sheet = workbook.getSheetAt(0);
+            Iterator<Row> rowIterator = sheet.iterator();
+    
+            while (rowIterator.hasNext()) {
+                Row row = rowIterator.next();
+                String cellDrugA = row.getCell(0).getStringCellValue();
+                String cellDrugB = row.getCell(1).getStringCellValue();
+                if ((cellDrugA.equalsIgnoreCase(drugA) && cellDrugB.equalsIgnoreCase(drugB)) ||
+                    (cellDrugA.equalsIgnoreCase(drugB) && cellDrugB.equalsIgnoreCase(drugA))) {
+                    String interactionDescription = row.getCell(4).getStringCellValue();
+                    String severity = row.getCell(3).getStringCellValue();
+                    return new String[]{interactionDescription, severity};
+                }
             }
         }
-
-        workbook.close();
-        fis.close();
         return null;
     }
 
