@@ -1,5 +1,5 @@
 
-package lucene.engine.lucene.service;
+package backend.services.service;
 
 import org.apache.lucene.analysis.custom.CustomAnalyzer;
 import org.apache.lucene.queryparser.classic.QueryParser;

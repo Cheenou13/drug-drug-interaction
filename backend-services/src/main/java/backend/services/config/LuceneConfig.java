@@ -1,4 +1,4 @@
-package lucene.engine.lucene.config;
+package backend.services.config;
 
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.index.DirectoryReader;

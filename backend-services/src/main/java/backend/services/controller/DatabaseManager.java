@@ -1,4 +1,4 @@
-package lucene.engine.lucene.controller;
+package backend.services.controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
