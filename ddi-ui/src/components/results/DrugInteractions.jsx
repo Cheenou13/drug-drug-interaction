@@ -57,6 +57,7 @@ const DrugInteractions = ({tempResponse}) => {
                             <div className="interactions-col description">
                                 <div className="interactions-header">Description</div>
                                 <p>{interaction.data.interaction}</p>
+                                <div className="tooltip">{interaction.data.interaction}</div>
                             </div>
                         </div>
                     </div>
