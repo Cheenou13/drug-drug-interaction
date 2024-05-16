@@ -1,5 +1,5 @@
-#drug-drug-interaction
-#Disclaimer
+# drug-drug-interaction
+# Disclaimer
 A search engine for Drug-Drug Interaction. Although the results are based on FDA databases it was not optimized and were not reviewed by any medical professional so do not take any advice from the results.
 
 # Prequist for Window:
